@@ -17,4 +17,4 @@ Aplikasi ini adalah sebuah platform web e-commerce sederhana yang dikembangkan m
 1. Buka terminal dan masuk ke dalam direktori `frontend`.
 2. Jalankan perintah `npm install` untuk menginstal semua dependensi Vue.js.
 3. Jalankan perintah `npm run dev` untuk memulai server pengembangan Vue.js.
-4. 
+
