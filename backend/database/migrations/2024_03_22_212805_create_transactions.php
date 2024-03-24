@@ -20,7 +20,8 @@ class CreateTransactions extends Migration
             $table->foreignId('product_id')->nullable()->constrained('products');
             $table->integer('quantity')->nullable();
             $table->decimal('total_amount', 10, 2);
-            $table->string('reference_number');
+            $table->string('no_invoice');
+            $table->uuid('reference_number')->default(DB::raw('gen_random_uuid()'))->unique();
             $table->timestamps();
         });
     }

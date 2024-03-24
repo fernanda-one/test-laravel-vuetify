@@ -32,10 +32,10 @@ class TransactionController extends Controller
         $noInvoice = $this->generateInvoiceNumber();
         $transaction = Transaction::where('customer_id', $data['customer_id'])->orderBy('created_at', 'desc')->first();
         if($transaction){
-            $noInvoice = $this->generateInvoiceNumber($transaction['reference_number']);
+            $noInvoice = $this->generateInvoiceNumber($transaction['no_invoice']);
         }
         $totalAmount = $product['price'] * $data['quantity'];
-        $data['reference_number'] = $noInvoice;
+        $data['no_invoice'] = $noInvoice;
         $data['total_amount'] = $totalAmount;
         $result = new Transaction($data);
         $result->save();
@@ -59,7 +59,7 @@ class TransactionController extends Controller
         $data->with('product'); 
         $data->where('customer_id', $id);
         $data->orderBy('created_at', 'desc');
-        $transaction = $data->paginate(perPage:$limit, page:$page);
+        $transaction = $data->paginate();
         return response([
             'status'=>true,
             'message'=>'succesfull',

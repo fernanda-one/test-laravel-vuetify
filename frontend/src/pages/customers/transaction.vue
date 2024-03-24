@@ -18,6 +18,8 @@
 
     const headers = [
         {key:"no",title:"no"},
+        {key:"reference_number",title:"reference number"},
+        {key:"no_invoice",title:"no invoice"},
         {key:"product.name",title:"product"},
         {key:"quantity",title:"quantity"},
         {key:"total_amount",title:"total amount"},
